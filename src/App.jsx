@@ -21,6 +21,7 @@ function App() {
   }, [])
   // console.log('test '+starshipList);
 
+  if(!starshipList.length) return <h1>Loading...</h1>
 
   return (
     <main>
@@ -28,9 +29,9 @@ function App() {
       {/* {console.log('testing '+starshipList)} */}
       {/* {Object.entries(starshipList).map(starship =>  */}
       {starshipList.map(starship => 
-        <div className="starship-card" key={starship._id}>
-          <p>{starship.name}</p>
-        </div>
+        <button className="starship-card" key={starship._id}>
+          <h3>{starship.name}</h3>
+        </button>
       )}
       
     </main>
