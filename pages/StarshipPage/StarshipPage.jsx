@@ -1,5 +1,6 @@
 // npm modules
 import { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
 
 // services
 import { getAllStarships } from "../../services/sw-api.js"
@@ -33,12 +34,13 @@ const StarshipPage = () => {
 
   return (
     <main>
-      <h1> StarShipPage</h1>
-      {/* <Ship/> */}
-      <h1>StarShipPage!</h1>
-      {starshipList.map(starship => 
-        <Ship key={starship._id} starship={starship}/>
-      )}
+        {starshipList.map(starship => 
+          <div key={starship._id} className="starship-card">
+            <Link to={`/${starship.url}`}>
+              <Ship key={starship._id} starship={starship}/>
+            </Link>
+          </div>
+        )}
     </main>
   )
 }

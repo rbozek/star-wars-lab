@@ -6,15 +6,14 @@ import './ShipCard.css'
 const Ship = ({starship}) => {
   return (
     <>
-      {/* <h1>Ship Card</h1>
-       */}
-      <div className="starship-card" >
-      <h2>{starship.name}</h2>
-      <div>
-        <Link to='/starships/details' state={{starship}}><button>useLocation</button></Link>
-        <Link to={`/starships/${starship.url.match(/\d+/)}`}><button>useParams</button></Link>
+
+      <div >
+        <h3>NAME: {starship.name}</h3>
+        <h3>MODEL: {starship.model}</h3>
+        <Link to={`/`}>
+            RETURN
+        </Link>
       </div>
-    </div>
     </>
   )
 }
