@@ -11,7 +11,7 @@ export async function getAllStarships() {
 
 export async function getStarshipData(shipId) {
   try {
-    const res = await fetch(`${baseUrl}/${shipId}`)
+    const res = await fetch(`${baseUrl}/starships/${shipId}`)
     return res.json()
   } catch (err) {
     console.log('🚨', err);
