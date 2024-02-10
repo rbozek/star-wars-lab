@@ -1,12 +1,11 @@
 // npm modules
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
+import { Route, Routes, useNavigate } from 'react-router-dom'
 
 // services
 import { getAllStarships } from "../../services/sw-api.js"
 
-// components
-import Ship from "../../components/ShipCard"
 
 // css
 import './StarshipPage.css'
@@ -26,18 +25,22 @@ const StarshipPage = () => {
       setStarshipList(starshipData.results)
     }
     fetchStarshipList()
-    console.log('test 2nd',starshipList);
+    // console.log('test 2nd',starshipList);
   }, [])
-  // console.log('test '+starshipList);
 
   if(!starshipList.length) return <h1>Loading...</h1>
 
   return (
     <main>
         {starshipList.map(starship => 
-          <div key={starship._id} className="starship-card">
-            <Link to={`/${starship.url}`}>
-              <Ship key={starship._id} starship={starship}/>
+          <div key={starship._id}>
+            <Link
+              key={starship._id}
+              to={`/starshipdeets/${starship.url.match(/\d+/)}`}
+            >
+                <div className="starship-card">
+                  <h2>{starship.name}</h2>
+                </div>
             </Link>
           </div>
         )}
@@ -46,3 +49,4 @@ const StarshipPage = () => {
 }
 
 export default StarshipPage
+{/* <ShipCard key={starship._id} starship={starship}/> */}
