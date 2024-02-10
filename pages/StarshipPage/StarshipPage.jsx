@@ -33,12 +33,12 @@ const StarshipPage = () => {
   return (
     <main>
         {starshipList.map(starship => 
-          <div key={starship._id}>
+          <div key={starship._id}  className="starship-card">
             <Link
               key={starship._id}
               to={`/starshipdeets/${starship.url.match(/\d+/)}`}
             >
-                <div className="starship-card">
+                <div>
                   <h2>{starship.name}</h2>
                 </div>
             </Link>
@@ -49,4 +49,3 @@ const StarshipPage = () => {
 }
 
 export default StarshipPage
-{/* <ShipCard key={starship._id} starship={starship}/> */}

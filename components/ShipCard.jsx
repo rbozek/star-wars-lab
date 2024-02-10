@@ -7,7 +7,6 @@ import { getStarshipData } from '../services/sw-api'
 
 import './ShipCard.css'
 
-// const ShipCard = ({starship}) => {
 const ShipCard = () => {
   const [shipDetails, setShipDetails] = useState({})
   const { shipId } = useParams()
@@ -23,12 +22,12 @@ const ShipCard = () => {
 
 
   return (
-    <main>
-        <h1>Testing ShipCard!</h1>
+    <div className="starship-card">
+        {/* <h1>Testing ShipCard!</h1> */}
         <h3>NAME: {shipDetails.name}</h3>
         <h3>MODEL: {shipDetails.model}</h3>
         <Link to={`/`}>RETURN</Link>
-    </main>
+    </div>
   )
 }
 

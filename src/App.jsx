@@ -15,7 +15,7 @@ function App() {
       {/* // wrap whole card in a link */}
         <Routes>
           <Route path='/' element={<StarshipPage />}/>
-          <Route path='/starshipdeets/:starshipId'  element={<ShipCard  />} />
+          <Route path='/starshipdeets/:shipId'  element={<ShipCard  />} />
         </Routes>
     </main>
   )
